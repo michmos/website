@@ -34,13 +34,15 @@ export default function PostPage({ params }: { params: { slug: string } }) {
               Pinned
             </span>
           )}
-          <time className="text-sm text-[rgb(var(--color-muted))]">
-            {new Date(post.meta.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </time>
+          {post.meta.date && Number.isFinite(Date.parse(post.meta.date)) && (
+            <time className="text-sm text-[rgb(var(--color-muted))]">
+              {new Date(post.meta.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+          )
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
           {post.meta.title}
