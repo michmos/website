@@ -28,6 +28,7 @@ jobs:
         run: |
           copilot -p "Review this pull request:
             - Check for code quality issues
+            - Check for code duplication
             - Look for potential bugs
             - Suggest improvements
             - Otherwise don't comment" --allow-tool='shell(git:*)' --no-ask-user
