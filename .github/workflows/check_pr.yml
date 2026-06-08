@@ -8,24 +8,7 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
-      - name: Set up Node.js environment
-        uses: actions/setup-node@v4
-
-      - name: Install Copilot CLI
-        run: npm install -g @github/copilot
-
-      - name: Run Copilot CLI
+      - name: Request Copilot review
         env:
-          COPILOT_GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        run: |
-          copilot -p "Review this pull request:
-            - Check for code quality issues
-            - Check for code duplication
-            - Look for potential bugs
-            - Suggest improvements
-            - Otherwise don't comment" --allow-tool='shell(git:*)' --no-ask-user
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: gh pr edit ${{ github.event.pull_request.number }} --add-reviewer @copilot
