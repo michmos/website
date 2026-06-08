@@ -53,7 +53,11 @@ export function getAllPosts(): PostMeta[] {
 
 export function getPostBySlug(slug: string): Post | null {
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.md`)
+    if (!/^[a-z0-9-]+$/i.test(slug)) return null
+
+    const postsDir = path.resolve(postsDirectory)
+    const fullPath = path.resolve(postsDir, `${slug}.md`)
+    if (!fullPath.startsWith(postsDir + path.sep)) return null
     if (!fs.existsSync(fullPath)) return null
 
     const fileContents = fs.readFileSync(fullPath, 'utf8')
