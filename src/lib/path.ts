@@ -11,7 +11,7 @@ export function encodePath(p: string) {
 export function resolveSrc(src: string) {
   if (!src) return ''
   if (src.startsWith('http://') || src.startsWith('https://')) return src
-  const bp = process.env.NODE_ENV === 'production' ? '/website' : ''
+  const bp = ''
   const normalized = src.startsWith('/') ? src : `/${src}`
   return encodePath(`${bp}${normalized}`)
 }

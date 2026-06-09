@@ -7,7 +7,7 @@ Next.js 14 (App Router) personal site with static export to GitHub Pages.
 | Command | Action |
 |---|---|
 | `npm run dev` | Dev server (basePath: `/`) |
-| `npm run build` | Static export → `out/` (production basePath: `/website`) |
+| `npm run build` | Static export → `out/` (production basePath: `/`) |
 | `npm run lint` | ESLint via `next lint` |
 
 No separate typecheck script; `next build` validates types.
