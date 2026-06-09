@@ -28,7 +28,6 @@
 
 @layer components {
   .prose-custom {
-    max-width: 65ch;
     line-height: 1.8;
   }
 

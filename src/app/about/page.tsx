@@ -7,7 +7,7 @@ export default function AboutPage() {
 
   if (!about) {
     return (
-      <section className="max-w-2xl mx-auto">
+      <section>
         <h1 className="text-3xl font-bold tracking-tight mb-3">About Me</h1>
         <p className="text-[rgb(var(--color-muted))]">No bio found.</p>
       </section>
@@ -15,7 +15,7 @@ export default function AboutPage() {
   }
 
   return (
-    <section className="max-w-2xl mx-auto">
+    <section>
       <div className="flex flex-col sm:flex-row items-start gap-8 mb-10">
         <div className="shrink-0">
           <div className="w-28 h-28 rounded-full bg-[rgb(var(--color-border))] overflow-hidden">
