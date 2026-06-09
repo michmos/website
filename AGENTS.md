@@ -36,6 +36,7 @@ No separate typecheck script; `next build` validates types.
 - **Path alias** `@/*` → `./src/*`
 - **Theming**: CSS custom properties `--color-bg`, `--color-fg`, `--color-muted`, `--color-border` in `globals.css`. Dark mode via `.dark` class + `localStorage`.
 - **No `@tailwindcss/typography`** — custom `.prose-custom` classes in `globals.css`
+- **`scrollbar-gutter: stable`** on `<html>` in `globals.css` prevents content from shifting when scrollbar appears/disappears between pages
 - **`suppressHydrationWarning`** on `<html>` required (dark mode client-side hydration)
 - Links open in new tab (`target="_blank" rel="noopener noreferrer"`)
 - `'use client'` only on Navbar and DarkModeToggle (interactivity/hooks)
