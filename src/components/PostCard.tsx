@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import type { PostMeta } from '@/lib/posts'
 
+function isVideo(path: string) {
+  return path.endsWith('.mp4')
+}
+
 export default function PostCard({ post, pinned }: { post: PostMeta; pinned?: boolean }) {
   return (
     <Link href={`/posts/${post.slug}`}>
@@ -11,11 +15,22 @@ export default function PostCard({ post, pinned }: { post: PostMeta; pinned?: bo
       >
         {post.thumbnail && (
           <div className="aspect-[16/9] overflow-hidden bg-[rgb(var(--color-border))]">
-            <img
-              src={post.thumbnail}
-              alt=""
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
+            {isVideo(post.thumbnail) ? (
+              <video
+                src={post.thumbnail}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            ) : (
+              <img
+                src={post.thumbnail}
+                alt=""
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            )}
           </div>
         )}
         <div className="p-5">
