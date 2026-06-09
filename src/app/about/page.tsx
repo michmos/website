@@ -16,7 +16,12 @@ export default function AboutPage() {
 
   return (
     <section>
+      <h1 className="text-3xl font-bold tracking-tight mb-2">About Me</h1>
+
       <div className="flex flex-col sm:flex-row items-start gap-8 mb-10">
+        <div className="flex-1">
+          <MarkdownRenderer content={about.bio} />
+        </div>
         <div className="shrink-0">
           <div className="w-28 h-28 rounded-full bg-[rgb(var(--color-border))] overflow-hidden">
             {about.profilePicture ? (
@@ -31,10 +36,6 @@ export default function AboutPage() {
               </div>
             )}
           </div>
-        </div>
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight mb-3">About Me</h1>
-          <MarkdownRenderer content={about.bio} />
         </div>
       </div>
 
