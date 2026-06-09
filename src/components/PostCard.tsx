@@ -25,15 +25,13 @@ export default function PostCard({ post, pinned }: { post: PostMeta; pinned?: bo
                 Pinned
               </span>
             )}
-            {post.date && Number.isFinite(Date.parse(post.date)) && (
-              <time className="text-xs text-[rgb(var(--color-muted))]">
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </time>
-            )
+            <time className="text-xs text-[rgb(var(--color-muted))]">
+              {new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
           </div>
           <h2 className="text-lg font-semibold mb-1.5 group-hover:text-accent-500 transition-colors">
             {post.title}
