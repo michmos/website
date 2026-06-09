@@ -27,7 +27,7 @@ export function getAllPosts(): PostMeta[] {
   const posts = fileNames
     .filter((fn) => fn.endsWith('.md'))
     .map((fn) => {
-      const slug = fn.replace(/\.md$/, '')
+      const slug = fn.replace(/\.md$/, '').replace(/\s+/g, '-').toLowerCase()
       const fullPath = path.join(postsDirectory, fn)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const { data } = matter(fileContents)
