@@ -16,7 +16,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <article className="max-w-2xl mx-auto">
+    <article>
       <Link
         href="/posts"
         className="inline-flex items-center gap-1 text-sm text-[rgb(var(--color-muted))] hover:text-[rgb(var(--color-fg))] transition-colors mb-8"
