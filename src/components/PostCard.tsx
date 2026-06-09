@@ -5,6 +5,10 @@ function isVideo(path: string) {
   return path.endsWith('.mp4')
 }
 
+function encodePath(path: string) {
+  return path.split('/').map((s) => encodeURIComponent(s)).join('/')
+}
+
 export default function PostCard({ post, pinned }: { post: PostMeta; pinned?: boolean }) {
   return (
     <Link href={`/posts/${post.slug}`}>
@@ -17,7 +21,7 @@ export default function PostCard({ post, pinned }: { post: PostMeta; pinned?: bo
           <div className="aspect-[16/9] overflow-hidden bg-[rgb(var(--color-border))]">
             {isVideo(post.thumbnail) ? (
               <video
-                src={post.thumbnail}
+                src={encodePath(post.thumbnail)}
                 autoPlay
                 loop
                 muted
@@ -26,7 +30,7 @@ export default function PostCard({ post, pinned }: { post: PostMeta; pinned?: bo
               />
             ) : (
               <img
-                src={post.thumbnail}
+                src={encodePath(post.thumbnail)}
                 alt=""
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />

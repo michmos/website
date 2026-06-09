@@ -53,9 +53,14 @@ export function getAllPosts(): PostMeta[] {
 
 export function getPostBySlug(slug: string): Post | null {
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.md`)
-    if (!fs.existsSync(fullPath)) return null
+    const fileNames = fs.readdirSync(postsDirectory)
+    const fileName = fileNames.find((fn) => {
+      const computedSlug = fn.replace(/\.md$/, '').replace(/\s+/g, '-').toLowerCase()
+      return computedSlug === slug && fn.endsWith('.md')
+    })
+    if (!fileName) return null
 
+    const fullPath = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
