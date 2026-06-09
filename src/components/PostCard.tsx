@@ -2,6 +2,10 @@ import Link from 'next/link'
 import type { PostMeta } from '@/lib/posts'
 import { resolveSrc, isVideo } from '@/lib/path'
 
+function encodePath(path: string) {
+  return path.split('/').map((s) => encodeURIComponent(s)).join('/')
+}
+
 export default function PostCard({ post, pinned }: { post: PostMeta; pinned?: boolean }) {
   return (
     <Link href={`/posts/${post.slug}`}>

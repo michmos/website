@@ -3,6 +3,10 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import { resolveSrc, isVideo } from '@/lib/path'
 
+function encodePath(path: string) {
+  return path.split('/').map((s) => encodeURIComponent(s)).join('/')
+}
+
 export default function MarkdownRenderer({ content }: { content: string }) {
   return (
     <div className="prose-custom">
