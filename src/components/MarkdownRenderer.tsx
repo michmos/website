@@ -2,6 +2,10 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 
+function encodePath(path: string) {
+  return path.split('/').map((s) => encodeURIComponent(s)).join('/')
+}
+
 export default function MarkdownRenderer({ content }: { content: string }) {
   return (
     <div className="prose-custom">
@@ -15,7 +19,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
             </a>
           ),
           img: ({ src, alt, ...props }) => (
-            <img src={src} alt={alt || ''} loading="lazy" {...props} />
+            <img src={encodePath(src ?? '')} alt={alt || ''} loading="lazy" {...props} />
           ),
         }}
       >
