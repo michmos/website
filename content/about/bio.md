@@ -2,11 +2,13 @@
 name: "michmos"
 profilePicture: "/imgs/profile.jpg"
 github: "https://github.com/michmos"
-linkedin: "https://linkedin.com/in/michmos"
-email: "hello@example.com"
-cv: "/cv/resume.pdf"
+linkedin: "https://www.linkedin.com/in/michael-moser-947248213/"
+email: "michmos.aside409@passinbox.com"
+cv: ""
 ---
 
-Hey there! I'm a software engineer passionate about building clean, functional, and elegant things. This is my little corner of the internet where I write about things I'm learning and building.
+I'm Michael Moser - a software engineer from Germany. I'm interested in robotics and embedded programming - at the end the name doesn't really matter; I like to write software that interacts with the real world. Why? I find it incredibly interesting and hope we can use it to solve some actual problems.
 
-When I'm not coding, you'll find me exploring new technologies, reading, or enjoying the outdoors.
+While I always liked building things with wood, it took me an internship at a robotics startup to realize the endless opportunities of software engineering. I applied at ecole42 in Amsterdam and spent two years learning everything about C/C++ development. Now that I finished the curriculum, I'm focusing on applying this knowledge to robotics. I will use this blog to share this journey, any thoughts along the way as well as any topic related to building or software engineering.
+
+:wq
