@@ -5,6 +5,7 @@ import MarkdownRenderer from '@/components/MarkdownRenderer'
 
 export async function generateStaticParams() {
   const posts = getAllPosts()
+  if (posts.length === 0) return [{ slug: '_placeholder' }]
   return posts.map((post) => ({ slug: post.slug }))
 }
 
