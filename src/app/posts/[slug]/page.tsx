@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getAllPosts, getPostBySlug } from '@/lib/posts'
+import { getAllPosts, getPostBySlug, formatDate } from '@/lib/posts'
 import MarkdownRenderer from '@/components/MarkdownRenderer'
 
 export async function generateStaticParams() {
@@ -34,13 +34,11 @@ export default function PostPage({ params }: { params: { slug: string } }) {
               Pinned
             </span>
           )}
-          <time className="text-sm text-[rgb(var(--color-muted))]">
-            {new Date(post.meta.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </time>
+          {post.meta.date && (
+            <time className="text-sm text-[rgb(var(--color-muted))]">
+              {formatDate(post.meta.date)}
+            </time>
+          )}
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
           {post.meta.title}

@@ -11,6 +11,15 @@ export interface PostMeta {
   pinned?: boolean
 }
 
+export function formatDate(date: string): string {
+  if (!date) return ''
+  return new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+}
+
 export interface Post {
   meta: PostMeta
   content: string
@@ -45,8 +54,11 @@ export function getAllPosts(): PostMeta[] {
   const pinned = posts.filter((p) => p.pinned)
   const unpinned = posts.filter((p) => !p.pinned)
 
-  const sortByDate = (a: PostMeta, b: PostMeta) =>
-    new Date(b.date).getTime() - new Date(a.date).getTime()
+  const sortByDate = (a: PostMeta, b: PostMeta) => {
+    const aTime = a.date ? new Date(a.date).getTime() : 0
+    const bTime = b.date ? new Date(b.date).getTime() : 0
+    return bTime - aTime
+  }
 
   return [...pinned.sort(sortByDate), ...unpinned.sort(sortByDate)]
 }
