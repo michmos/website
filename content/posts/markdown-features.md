@@ -1,6 +1,6 @@
 ---
 title: "Markdown Features Demo"
-date: "2026-05-25"
+date: "2026-06-01"
 description: "A quick demo of the Markdown features supported on this site."
 thumbnail: ""
 pinned: false

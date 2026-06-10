@@ -1,0 +1,10 @@
+---
+title: "File name with caps"
+date: "2026-05-25"
+description: "The md file for this post has caps in it's slug"
+thumbnail: ""
+pinned: false
+---
+
+# Example post
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non volutpat urna. Pellentesque vel urna quis erat condimentum condimentum id non quam. Integer sapien arcu, sollicitudin vitae tincidunt at, varius ac nisi. Vestibulum viverra nisi pulvinar felis gravida, non faucibus enim dignissim. Quisque sit amet mollis ex. Donec pulvinar purus sit amet justo euismod, in faucibus lectus sagittis. Aliquam metus lorem, congue sed iaculis non, rhoncus at tellus. Nulla dignissim ipsum ex, quis tempor neque efficitur nec. Praesent quis est laoreet eros feugiat dignissim. Maecenas a odio varius, rutrum lectus eu, ultrices felis.
