@@ -26,7 +26,7 @@ export function getAbout(): AboutData | null {
       github: data.github || '#',
       linkedin: data.linkedin || '#',
       email: data.email || '',
-      cv: data.cv || '#',
+      cv: data.cv || '',
       bio: content,
     }
   } catch {

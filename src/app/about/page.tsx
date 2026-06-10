@@ -80,7 +80,7 @@ export default function AboutPage() {
               Email
             </a>
           )}
-          {about.cv !== '#' && (
+          {about.cv && (
             <Link
               href={about.cv}
               target="_blank"
